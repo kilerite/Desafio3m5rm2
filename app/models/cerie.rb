@@ -1,0 +1,2 @@
+class Cerie < ApplicationRecord
+end

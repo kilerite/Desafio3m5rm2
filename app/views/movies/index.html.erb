@@ -1,0 +1,28 @@
+
+<div class="my-3">
+  <strong>Filtrar por letra:</strong>
+  <a href="<%= movies_path %>" class="btn btn-primary letter-link">Todas</a>
+  <% ('A'..'Z').each do |letter| %>
+    <% uppercase_letter = letter.upcase %>
+    <%= link_to uppercase_letter, movies_path(letter: uppercase_letter), class: "btn btn-primary letter-link" %>
+  <% end %>
+</div>
+<h1 class="mt-5 text-center">Movies</h1>
+<div class="d-flex justify-content-center border p-4 shadow">
+
+  <% if @movies.empty? %>
+    <p>No hay películas por listar</p>
+  <% else %>
+    <ul class="list-group">
+      <% @movies.each do |movie| %>
+        <li class="list-group-item">
+          <h3 class="mb-2">Película <%= movie.name %></h3>
+          <p class="mb-1">Sinopsis <%= movie.synopsis %></p>
+          <p class="mb-1"><strong>Director:</strong> <%= movie.director %></p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+ 

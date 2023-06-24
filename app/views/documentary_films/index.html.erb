@@ -1,0 +1,24 @@
+<div class="my-3">
+  <strong>Filtrar por letra:</strong>
+  <a href="<%= documentary_films_path %>" class="btn btn-primary letter-link">Todas</a>
+  <% ('A'..'Z').each do |letter| %>
+    <% uppercase_letter = letter.upcase %>
+    <%= link_to uppercase_letter, documentary_films_path(letter: uppercase_letter), class: "btn btn-primary letter-link" %>
+  <% end %>
+</div>
+<h1 class="mt-5 text-center">Documentales: </h1>
+<div class="d-flex justify-content-center border p-4 shadow">
+  <% if @dfs.empty? %>
+    <p>No hay Documentales por listar</p>
+  <% else %>
+    <ul class="list-group">
+      <% @dfs.each do |df| %>
+        <li class="list-group-item">
+          <h3 class="mb-2">Documental <%= df.name %></h3>
+          <p class="mb-1">Sinopsis <%= df.synopsis %></p>
+          <p class="mb-1"><strong>Director:</strong> <%= df.director %></p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

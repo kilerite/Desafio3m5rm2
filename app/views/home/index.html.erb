@@ -1,0 +1,39 @@
+<!-- app/views/home/index.html.erb -->
+<div class="container">
+  <h1 class="mt-5 mb-4 text-center">Bienvenido a mi sitio de películas, series y documentales</h1>
+  
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <%= image_tag "movies.jpg", class: "card-img-top", alt: "Películas", width: 300, height: 300 %>
+        <div class="card-body">
+          <h5 class="card-title">Películas</h5>
+          <p class="card-text">Explora nuestra colección de películas y encuentra tus favoritas.</p>
+          <%= link_to "Ver películas", movies_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <%= image_tag "series.jpg", class: "card-img-top", alt: "Series", width: 300, height: 300 %>
+        <div class="card-body">
+          <h5 class="card-title">Series</h5>
+          <p class="card-text">Descubre nuestras series populares y disfruta de episodios emocionantes.</p>
+          <%= link_to "Ver series", ceries_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <%= image_tag "documentals.jpg", class: "card-img-top", alt: "Documentales", width: 300, height: 300 %>
+        <div class="card-body">
+          <h5 class="card-title">Documentales</h5>
+          <p class="card-text">Sumérgete en el mundo de los documentales y explora temas fascinantes.</p>
+          <%= link_to "Ver documentales", documentary_films_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
