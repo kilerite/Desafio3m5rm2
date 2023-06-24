@@ -15,12 +15,7 @@
 # gem "pg"
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  username: postgres
-  password: 1018
-  host: localhost
-  port: 5432
+
 
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -86,6 +81,5 @@ test:
 #
 production:
   <<: *default
-  database: desafio3_m5_rm2_production
-  username: desafio3_m5_rm2
-  password: <%= ENV["DESAFIO3_M5_RM2_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
+ 
