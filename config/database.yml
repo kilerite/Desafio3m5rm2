@@ -23,13 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: desafio3_m5_rm2_development
-  adapter: postgresql
-  encoding: unicode
-  username: postgres
-  password: 1018
-  host: localhost
-  port: 5432
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -85,8 +79,8 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-# production:
-#   <<: *default
-#   url: <%= ENV["DATABASE_URL"] %>
-#   ACTIVAR CUANDO SE SUBA A RENDER
+production:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
+
 
