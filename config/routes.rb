@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :documentary_films
   resources :ceries
   resources :movies
-  
+  resources :home
+
   root "home#index"
   
 
